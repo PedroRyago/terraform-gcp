@@ -1,19 +1,20 @@
 steps:
 
-- id: 'tf init'
-  name: 'hashicorp/terraform:1.0.0'
-  entrypoint: 'sh'
-  args:
+id: 'tf init'
+name: 'hashicorp/terraform:1.0.0'
+entrypoint: '/bin/sh'
+args:
 
-  - '-c'
-  - 'terraform init'
+'-c'
+'terraform init'
+id: 'tf apply'
+name: 'hashicorp/terraform:1.0.0'
+entrypoint: '/bin/sh'
+args:
 
-- id: 'tf apply'
-  name: 'hashicorp/terraform:1.0.0'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - | 
-   
-    'terraform apply -auto-approve'
+'-c'
+
+|
+
+'/usr/bin/terraform apply -auto-approve'
  
