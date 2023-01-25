@@ -2,7 +2,14 @@ steps:
 
 - id: 'copy files'
   name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/PedroRyago/terraform-gcp', '/proj', 'cd proj/terraform-exemplo2']
+  args: ['clone', 'https://github.com/PedroRyago/terraform-gcp', '/proj']
+
+- id: 'cd to dir'
+  name: 'gcr.io/cloud-builders/bash'
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - 'cd /proj/terraform-exemplo2'
 
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
