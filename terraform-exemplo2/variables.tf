@@ -5,7 +5,7 @@ variable "network_name" {
 }
 
 variable "centro_custo_rh" {
-  description = "Nome da Rede"
+  description = "Centro de custo rh"
   type        = string
   default     = "rh"
 }
